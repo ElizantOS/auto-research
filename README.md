@@ -1,6 +1,6 @@
-# auto-research
+# Autoresearch Workspace
 
-Codex-native autonomous research framework inspired by `karpathy/autoresearch`, but adapted for product and systems research instead of single-file GPU training.
+This directory adds a Codex-native autonomous research loop inspired by `karpathy/autoresearch`, but adapted for product and systems research instead of single-file GPU training.
 
 The target user experience is OMX-like:
 
@@ -49,6 +49,7 @@ bun run autoresearch dashboard demo-memory
 ```text
 research/autoresearch/
   templates/               generic project templates
+  projects/                concrete research projects
 
 .autoresearch/
   projects/<name>/state.json
@@ -162,6 +163,14 @@ bun run autoresearch sentinel memory-policy --codex --model gpt-5.4-medium
 # long-running sentinel loop
 bun run autoresearch sentinel memory-policy --loop --codex --model gpt-5.4-medium
 ```
+
+## Seed Project
+
+`projects/memory-policy` is the starter lane for the long-memory paper and experiment system. It already includes:
+
+- a scoped objective derived from your memory-as-policy plan
+- a paper/design/experiment/results workspace
+- a rubric evaluator so the loop has an immediate score signal
 
 ## Reference
 
